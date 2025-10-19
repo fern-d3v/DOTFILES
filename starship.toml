@@ -1,0 +1,80 @@
+# Starship Configuration - Dracula Theme
+# Matches your Oh My Posh Dracula setup
+
+# Prompt format - defines the order of modules
+format = """
+[](bg:#6272a4)\
+$username\
+[](bg:#bd93f9 fg:#6272a4)\
+$directory\
+[](bg:#ffb86c fg:#bd93f9)\
+$git_branch\
+$git_status\
+[](bg:#8be9fd fg:#ffb86c)\
+$nodejs\
+[](bg:#ff79c6 fg:#8be9fd)\
+$time\
+[ ](fg:#ff79c6)\
+$line_break\
+$character"""
+
+# Username module (grey background)
+[username]
+style_user = "bg:#6272a4 fg:#f8f8f2"
+style_root = "bg:#6272a4 fg:#ff5555"
+format = '[ fern & null_ ]($style)'
+disabled = false
+show_always = true
+
+# Directory/Path module (purple background)
+[directory]
+style = "bg:#bd93f9 fg:#f8f8f2"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+# Git branch module (orange background)
+[git_branch]
+symbol = " "
+style = "bg:#ffb86c fg:#f8f8f2"
+format = '[ $symbol$branch ]($style)'
+
+# Git status module (orange background)
+[git_status]
+style = "bg:#ffb86c fg:#f8f8f2"
+format = '[$all_status$ahead_behind ]($style)'
+
+# Node.js module (cyan background)
+[nodejs]
+symbol = " "
+style = "bg:#8be9fd fg:#f8f8f2"
+format = '[ $symbol($version) ]($style)'
+
+# Time module (pink background)
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:#ff79c6 fg:#f8f8f2"
+format = '[ ♥ $time ]($style)'
+
+# Line break before prompt character
+[line_break]
+disabled = false
+
+# Prompt character (the $ symbol)
+[character]
+success_symbol = "[\\$](bold fg:#f8f8f2)"
+error_symbol = "[\\$](bold fg:#ff5555)"
+
+# Optional: Disable modules you don't want
+[package]
+disabled = false
+
+[python]
+disabled = false
+
+[rust]
+disabled = false
+
+[golang]
+disabled = true
